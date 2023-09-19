@@ -1,0 +1,48 @@
+  PAW_PBE Hg 06Sep2000
+   12.0000000000000
+ parameters from PSCTR are:
+   VRHFIN =Hg: 10s 2d fine mesh  91
+   LEXCH  = CA
+   EATOM  =     0.0000 eV,  116.0819 Ry
+
+   TITEL  = US Hg, faked
+   LULTRA =        T    use ultrasoft PP ?
+   IUNSCR =        1    unscreen: 0-lin 1-nonlin 2-no
+   RPACOR =   -1.000    partial core radius
+   POMASS =  200.590; ZVAL   =   12.000    mass and valenz
+   RCORE  =    3.050    outmost cutoff radius
+   RWIGS  =    3.050; RWIGS  =    1.614    wigner-seitz radius (au A)
+   ENMAX  =  158.977; ENMIN  =  119.233 eV
+   EAUG   =  265.444
+
+   RCLOC  =    2.106    cutoff for local pot
+   LCOR   =        T    correct aug charges
+   RMAX   =    3.657    core radius for proj-oper
+   QCUT   =   -3.000; QGAM   =    6.837    optimization parameters
+
+ Atomic configuration
+   15 entries
+     n  l   j            E        occ.
+     1  0  0.50    -82552.8686   2.0000
+     2  0  0.50    -14644.9646   2.0000
+     2  1  1.50    -12647.7390   6.0000
+     3  0  0.50     -3477.2458   2.0000
+     3  1  1.50     -2899.2084   6.0000
+     3  2  2.50     -2289.5421  10.0000
+     4  0  0.50      -763.8292   2.0000
+     4  1  1.50      -573.9291   6.0000
+     4  2  2.50      -348.1476  10.0000
+     4  3  3.50       -96.7466  14.0000
+     5  0  0.50      -117.8955   2.0000
+     5  1  1.50       -66.5193   6.0000
+     5  2  2.50       -10.1101  10.0000
+     6  0  0.50        -7.0935   2.0000
+     6  1  1.50        -6.8029   0.0000
+   Description
+     l     E      TYP  RCUT    TYP  RCUT
+     2   .000      7  2.470    23  3.050
+     2   .000      7  2.470    23  3.050
+     0   .000     15  2.720    23  2.720
+     1  -.200     15  2.720    23  3.050
+END of PSCTR-controll parameters
+ local part
