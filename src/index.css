@@ -291,3 +291,9 @@ td {
   margin-top: 1em;
   margin-bottom: 1em;
 }
+
+pre {
+  background-color: rgba(240, 242, 244, 0.5);
+  border-radius: 0.3em;
+  padding: 0.5em;
+}

@@ -1,9 +1,9 @@
 # Pyodide demo
 
 This is a proof-of-concept react application to run virtually any python code in
-the browser using Pyodide.
+the browser using [Pyodide](https://pyodide.org).
 
-What does this application does?
+What does this application do?
 
 1. It takes VASP POTCAR file as input (a scientific data format used in DFT
 calculation. The specifics of this file format is not important for this demo).

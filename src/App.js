@@ -10,6 +10,7 @@ function App() {
   const [filename, setFilename] = useState("");
   const [data, setData] = useState("");
   const [show, setShow] = useState(false);
+  const [showCopied, setShowCopied] = useState(false);
 
   const onDrop = useCallback((acceptedFiles) => {
     acceptedFiles.forEach((file) => {
@@ -45,7 +46,7 @@ function App() {
           }
           let tmpFormat = "[";
           for (let i = 0; i < tmp.length; i++) {
-            tmpFormat += JSON.stringify(tmp[0]) + ",";
+            tmpFormat += JSON.stringify(tmp[i], null, 2) + ",";
           }
           tmpFormat = tmpFormat.slice(0, -1) + "]";
 
@@ -68,7 +69,20 @@ function App() {
     "File content is read as string, and sent to Pyodide to" +
     " parse using python code. Once processing is done, results will be send" +
     " back to JavaScript. All the Pyodide job is run on a separate webworker" +
-    " thread, leaving main browser thread remains responsive at all times.";
+    " thread, so that main browser thread remains responsive at all times.";
+
+  const CopyToClipboard = () => {
+    if (output !== "") {
+      setTimeout(() => {
+        setShowCopied(false);
+      }, 1500);
+
+      navigator.clipboard.writeText(output);
+      setShowCopied(true);
+    } else {
+      navigator.clipboard.writeText("");
+    }
+  };
 
   return (
     <div className="container">
@@ -140,9 +154,12 @@ function App() {
         {output !== "" && (
           <>
             <p>Valence configuration:</p>
-            <p>
+            <pre>
               <code>{output}</code>
-            </p>
+            </pre>
+            <button className="btn" onClick={CopyToClipboard}>
+              {showCopied ? "Copied" : "Copy"}
+            </button>
           </>
         )}
       </div>

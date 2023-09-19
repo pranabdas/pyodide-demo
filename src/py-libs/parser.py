@@ -3,9 +3,9 @@ async def parser(data):
     for pkg in ["lzma", "monty", "networkx", "scipy", "sqlite3", "tabulate", "uncertainties"]:
         await micropip.install(pkg)
 
-    await micropip.install("/pkg/pymatgen-2023.9.10-py3-none-any.whl", deps=False)
-    await micropip.install("/pkg/spglib-2.0.2-py3-none-any.whl", deps=False)
-    await micropip.install("/pkg/ruamel.yaml-0.17.32-py3-none-any.whl", deps=False)
+    for custom_pkg in ["pymatgen-2023.9.10", "ruamel.yaml-0.17.32", "spglib-2.0.2"]:
+        url = "/pkg/" + custom_pkg + "-py3-none-any.whl"
+        await micropip.install(url, deps=False)
 
     from pymatgen.io.vasp import PotcarSingle
     result = PotcarSingle(data).electron_configuration
@@ -23,7 +23,7 @@ async def parser(data):
             "occupation": orbital[2],
         })
 
-    print(valence_config)
+    # print(valence_config)
     return valence_config
 
 ORBITAL_DICT = {
